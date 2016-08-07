@@ -5,7 +5,6 @@
 
 ## Setup
 1. `npm install`
-2. `npm run build:pixi
 
 ## Run/Develop
 1. `npm run serve` or `npm run serve:hot`
