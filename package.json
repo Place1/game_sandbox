@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "git submodule update --recursive",
-    "build:pixi": "cd pixi && npm install && npm install jshint && gulp build"
+    "preinstall": "git submodule update --recursive && npm run build:pixi",
+    "build:pixi": "cd pixi && npm install && npm install jshint && gulp build",
+    "serve": "webpack-dev-server",
+    "serve:hot": "webpack-dev-server --hot",
+    "build": "webpack",
+    "build:production": "webpack -p"
   },
   "author": "",
   "license": "ISC",

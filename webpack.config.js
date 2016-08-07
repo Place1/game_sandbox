@@ -18,5 +18,8 @@ module.exports = {
 			test: /\.(png|jpeg|woff|woff2|eot|ttf|svg)$/,
 			loader: 'url-loader?limit=100000'
 		}]
+	},
+	devServer: {
+		port: 8000
 	}
 };
