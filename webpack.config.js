@@ -15,9 +15,6 @@ module.exports = {
 				presets: ['es2015', 'stage-1']
 			}
 		}, {
-			test: /.json$/,
-			loader: 'json-loader'
-		}, {
 			test: /\.(png|jpeg|woff|woff2|eot|ttf|svg)$/,
 			loader: 'url-loader?limit=100000'
 		}]

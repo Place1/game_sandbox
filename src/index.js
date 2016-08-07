@@ -1,3 +1,4 @@
+require('script!../pixi/bin/pixi.min.js')
 const InputManager = require('./InputManager')
 const Keys = require('./InputManager').Keys
 
