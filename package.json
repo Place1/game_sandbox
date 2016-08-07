@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "git submodule update --recursive && npm run build:pixi",
-    "build:pixi": "cd pixi.js && npm install && npm install jshint && gulp build",
+    "build:pixi": "git submodule update --init --recursive && cd pixi.js && npm install && npm install jshint && ./node_modules/.bin/gulp build",
     "serve": "webpack-dev-server",
     "serve:hot": "webpack-dev-server --hot",
     "build": "webpack",
