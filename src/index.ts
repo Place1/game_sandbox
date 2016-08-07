@@ -16,10 +16,10 @@ for (let i = 0; i < bunnyAssetLength; i++) {
 }
 PIXI.loader.load(resourcesReady)
 
-let bunny = null
+let bunny: PIXI.extras.MovieClip = null
 
 // when the assets have been loaded this will get called.
-function resourcesReady(loader, resources: any) {
+function resourcesReady(loader: PIXI.loaders.Loader, resources: any) {
   const textures = _.values(resources).map((resource: any) => resource.texture)
   bunny = new PIXI.extras.MovieClip(textures)
   bunny.animationSpeed = 0.2

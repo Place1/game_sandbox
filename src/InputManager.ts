@@ -5,26 +5,31 @@ export const Keys = {
 	d: 68,
 }
 
+interface KeyCache {
+	[key: number]: boolean;
+}
+
 class InputManager {
 
-	private pressed: Object = {} // a hash used to determine if a key is pressed
+	// a hash used to determine if a key is pressed
+	private pressed: KeyCache = {}
 
 	constructor() {
 	}
 
-	isDown(key) {
+	isDown(key: number) {
 		return this.pressed[key] ? true : false
 	}
 
-	idUp(key) {
+	idUp(key: number) {
 		return !this.isDown(key)
 	}
 
-	keyDown = event => {
+	keyDown = (event: KeyboardEvent) => {
 		this.pressed[event.keyCode] = true
 	}
 
-	keyUp = event => {
+	keyUp = (event: KeyboardEvent) => {
 		this.pressed[event.keyCode] = false
 	}
 }

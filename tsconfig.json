@@ -3,17 +3,15 @@
         "target": "es5",
         "module": "commonjs",
         "moduleResolution": "node",
-        "allowJs": true,
         "isolatedModules": false,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "declaration": false,
-        "noImplicitAny": false,
+        "noImplicitAny": true,
         "noImplicitUseStrict": false,
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
-        "suppressImplicitAnyIndexErrors": true,
         "sourceMap": true
     },
     "exclude": [
