@@ -1,4 +1,4 @@
-const Keys = {
+export const Keys = {
 	w: 87,
 	a: 65,
 	s: 83,
@@ -7,8 +7,9 @@ const Keys = {
 
 class InputManager {
 
+	private pressed: Object = {} // a hash used to determine if a key is pressed
+
 	constructor() {
-		this.pressed = {} // a hash used to determine if a key is pressed
 	}
 
 	isDown(key) {
@@ -34,5 +35,4 @@ const instance = new InputManager()
 window.addEventListener('keydown', instance.keyDown)
 window.addEventListener('keyup', instance.keyUp)
 
-module.exports = instance
-module.exports.Keys = Keys
+export default instance

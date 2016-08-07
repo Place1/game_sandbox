@@ -1,6 +1,5 @@
-require('script!../pixi/bin/pixi.min.js')
-const InputManager = require('./InputManager')
-const Keys = require('./InputManager').Keys
+import InputManager, { Keys } from './InputManager'
+import * as _ from 'lodash'
 
 const width = document.documentElement.clientWidth;
 const height = document.documentElement.clientHeight;
@@ -13,15 +12,15 @@ const stage = new PIXI.Container();
 // load our resources
 const bunnyAssetLength = 10
 for (let i = 0; i < bunnyAssetLength; i++) {
-  PIXI.loader.add(i.toString(), require(`./assets/${i}.png`))
+  PIXI.loader.add(i.toString(), `/dist/assets/${i}.png`)
 }
 PIXI.loader.load(resourcesReady)
 
 let bunny = null
 
 // when the assets have been loaded this will get called.
-function resourcesReady(loader, resources) {
-  const textures = [...new Array(bunnyAssetLength)].map((_, i) => resources[i].texture)
+function resourcesReady(loader, resources: any) {
+  const textures = _.values(resources).map((resource: any) => resource.texture)
   bunny = new PIXI.extras.MovieClip(textures)
   bunny.animationSpeed = 0.2
   bunny.play()
